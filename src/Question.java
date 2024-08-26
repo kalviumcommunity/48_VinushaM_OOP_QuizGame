@@ -1,23 +1,22 @@
 public class Question {
     private String questionText;
     private String[] options;
-    private int correctOption;
+    private String correctAnswer;
 
-    public Question(String questionText, String[] options, int correctOption) {
+    public Question(String questionText, String[] options, String correctAnswer) {
         this.questionText = questionText;
         this.options = options;
-        this.correctOption = correctOption;
+        this.correctAnswer = correctAnswer;
     }
 
-    public String getQuestionText() {
-        return questionText;
+    public void displayQuestion() {
+        System.out.println("Question: " + this.questionText);
+        for (int i = 0; i < this.options.length; i++) {
+            System.out.println((i + 1) + ". " + this.options[i]);
+        }
     }
 
-    public String[] getOptions() {
-        return options;
-    }
-
-    public int getCorrectOption() {
-        return correctOption;
+    public boolean checkAnswer(String answer) {
+        return this.correctAnswer.equalsIgnoreCase(answer);
     }
 }

@@ -7,15 +7,17 @@ public class Player {
         this.score = 0;
     }
 
-    public String getName() {
-        return this.name;
+    public void addPoints(int points) {
+        this.score += points;
     }
 
-    public int getScore() {
-        return this.score;
+    public void displayScore() {
+        System.out.println(this.name + "'s score: " + this.score);
     }
 
-    public void incrementScore() {
-        this.score++;
+    public void resetScore() {
+        this.score = 0;
     }
 }
+
+// this pointer - current object's instance
