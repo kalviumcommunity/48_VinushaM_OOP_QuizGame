@@ -37,6 +37,12 @@ public class Main {
             player1.displayScore();
             System.out.println();
         }
+
+        System.out.println("Total players: " + Player.getTotalPlayers());
+        System.out.println("Total questions: " + Question.getTotalQuestions());
+
+        Player.displayGameStatistics();
+
         System.out.println("Resetting the score...");
         player1.resetScore();
         player1.displayScore();
