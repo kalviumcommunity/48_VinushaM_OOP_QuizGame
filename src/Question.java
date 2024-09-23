@@ -3,10 +3,13 @@ public class Question {
     private String[] options;
     private String correctAnswer;
 
+    private static int totalQuestions = 0;
+
     public Question(String questionText, String[] options, String correctAnswer) {
         this.questionText = questionText; 
         this.options = options; 
         this.correctAnswer = correctAnswer; 
+        totalQuestions++;
     }
 
     public void displayQuestion() {
@@ -22,5 +25,9 @@ public class Question {
 
     public String[] getOptions() {
         return this.options;
+    }
+    // Static method to access totalQuestions
+    public static int getTotalQuestions() {
+        return totalQuestions;
     }
 }
