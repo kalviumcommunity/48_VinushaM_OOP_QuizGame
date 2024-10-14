@@ -2,13 +2,14 @@ public class Question {
     private String questionText;
     private String[] options;
     private String correctAnswer;
-
+    private String difficulty;
     private static int totalQuestions = 0;
 
     public Question(String questionText, String[] options, String correctAnswer) {
         this.questionText = questionText; 
         this.options = options; 
         this.correctAnswer = correctAnswer; 
+        this.difficulty = "Easy";
         totalQuestions++;
     }
 
@@ -38,8 +39,16 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
     public void displayQuestion() {
-        System.out.println("Question: " + this.questionText); 
+        System.out.println("Question: " + this.questionText + " (Difficulty: " + this.difficulty + ")"); 
         for (int i = 0; i < this.options.length; i++) {
             System.out.println((i + 1) + ". " + this.options[i]);  
         }

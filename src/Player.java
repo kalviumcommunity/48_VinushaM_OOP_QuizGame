@@ -1,13 +1,14 @@
 public class Player {
     private String name;
     private int score;
-
+    private String level;
     private static int totalPlayers = 0;
     private static int totalPoints = 0; 
 
     public Player(String name) {
         this.name = name;
         this.score = 0;
+        this.level = "Beginner";
         totalPlayers++;
     }
 
@@ -31,17 +32,32 @@ public class Player {
         this.score = score;
     }
 
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
     public void addPoints(int points) {
         this.score += points;
         totalPoints += points;
+        if (this.score >= 50) {
+            this.level = "Advanced";
+        } else if (this.score >= 20) {
+            this.level = "Intermediate";
+        }
     }
 
     public void displayScore() {
         System.out.println(this.name + "'s score: " + this.score);
+        System.out.println(this.name + "'s level: " + this.level);
     }
 
     public void resetScore() {
         this.score = 0;
+        this.level = "Beginner";
     }
 
     public static int getTotalPlayers() {
