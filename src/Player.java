@@ -11,6 +11,26 @@ public class Player {
         totalPlayers++;
     }
 
+    // Accessor (Getter) for name
+    public String getName() {
+        return name;
+    }
+
+    // Mutator (Setter) for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Accessor for score
+    public int getScore() {
+        return score;
+    }
+
+    // Mutator for score
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     public void addPoints(int points) {
         this.score += points;
         totalPoints += points;
