@@ -5,10 +5,24 @@ public class Player {
     private static int totalPlayers = 0;
     private static int totalPoints = 0; 
 
+    public Player() {
+        this.name = "Unknown";
+        this.score = 0;
+        this.level = "Beginner";
+        totalPlayers++;
+    }
+
     public Player(String name) {
         this.name = name;
         this.score = 0;
-        this.level = "Beginner";
+        this.level = "Beginner"; 
+        totalPlayers++;
+    }
+
+    public Player(String name, int score) {
+        this.name = name;
+        this.score = score;
+        this.level = (score >= 50) ? "Advanced" : (score >= 20) ? "Intermediate" : "Beginner"; // Determine level based on score
         totalPlayers++;
     }
 
