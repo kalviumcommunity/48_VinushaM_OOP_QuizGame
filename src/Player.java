@@ -1,67 +1,40 @@
-public class Player {
-    private String name;
+public class Player extends Person{
     private int score;
     private String level;
     private static int totalPlayers = 0;
     private static int totalPoints = 0; 
 
     public Player() {
-        this.name = "Unknown";
+        super("Unknown");
         this.score = 0;
         this.level = "Beginner";
         totalPlayers++;
     }
 
     public Player(String name) {
-        this.name = name;
+        super(name);
         this.score = 0;
         this.level = "Beginner"; 
         totalPlayers++;
     }
 
     public Player(String name, int score) {
-        this.name = name;
+        super(name);
         this.score = score;
         this.level = (score >= 50) ? "Advanced" : (score >= 20) ? "Intermediate" : "Beginner"; // Determine level based on score
         totalPlayers++;
     }
 
-    // Accessor (Getter) for name
-    public String getName() {
-        return name;
-    }
-
-    // Mutator (Setter) for name
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    // Accessor for score
-    public int getScore() {
-        return score;
-    }
-
-    // Mutator for score
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
+    private String determineLevel(int score) {
+        if (score >= 50) return "Advanced";
+        else if (score >= 20) return "Intermediate";
+        else return "Beginner";
     }
 
     public void addPoints(int points) {
         this.score += points;
         totalPoints += points;
-        if (this.score >= 50) {
-            this.level = "Advanced";
-        } else if (this.score >= 20) {
-            this.level = "Intermediate";
-        }
+        this.level = determineLevel(this.score);
     }
 
     public void displayScore() {
