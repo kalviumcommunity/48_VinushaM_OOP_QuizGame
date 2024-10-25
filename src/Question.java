@@ -2,14 +2,14 @@ public class Question {
     private String questionText;
     private String[] options;
     private String correctAnswer;
-    private String difficulty;
+    // private String difficulty;
     private static int totalQuestions = 0;
 
     public Question() {
         this.questionText = "Unknown question";
         this.options = new String[]{"Option1", "Option2", "Option3", "Option4"};
         this.correctAnswer = "Unknown";
-        this.difficulty = "Easy";
+        // this.difficulty = "Easy";
         totalQuestions++;
     }
 
@@ -17,7 +17,7 @@ public class Question {
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
-        this.difficulty = "Easy";
+        // this.difficulty = "Easy";
         totalQuestions++;
     }
 
@@ -25,53 +25,23 @@ public class Question {
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
-        this.difficulty = difficulty;
+        // this.difficulty = difficulty;
         totalQuestions++;
     }
 
-    // Accessor (Getter) for questionText
-    public String getQuestionText() {
-        return questionText;
-    }
-
-    // Mutator (Setter) for questionText
-    public void setQuestionText(String questionText) {
-        this.questionText = questionText;
-    }
-
-    public String[] getOptions() {
-        return options;
-    }
-
-    public void setOptions(String[] options) {
-        this.options = options;
-    }
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
-
     public void displayQuestion() {
-        System.out.println("Question: " + this.questionText + " (Difficulty: " + this.difficulty + ")"); 
-        for (int i = 0; i < this.options.length; i++) {
-            System.out.println((i + 1) + ". " + this.options[i]);  
+        System.out.println("Question: " + questionText); 
+        for (int i = 0; i < options.length; i++) {
+            System.out.println((i + 1) + ". " + options[i]);  
         }
     }
 
     public boolean checkAnswer(String answer) {
         return this.correctAnswer.equalsIgnoreCase(answer); 
+    }
+
+    public String[] getOptions() {
+        return options;
     }
 
     // Static method to access totalQuestions
