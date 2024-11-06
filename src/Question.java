@@ -1,33 +1,31 @@
-public class Question {
+abstract class Question {
     private String questionText;
     private String[] options;
     private String correctAnswer;
-    // private String difficulty;
-    private static int totalQuestions = 0;
 
-    public Question() {
-        this.questionText = "Unknown question";
-        this.options = new String[]{"Option1", "Option2", "Option3", "Option4"};
-        this.correctAnswer = "Unknown";
-        // this.difficulty = "Easy";
-        totalQuestions++;
-    }
+    // public Question() {
+    //     this.questionText = "Unknown question";
+    //     this.options = new String[]{"Option1", "Option2", "Option3", "Option4"};
+    //     this.correctAnswer = "Unknown";
+    //     // this.difficulty = "Easy";
+    //     totalQuestions++;
+    // }
 
     public Question(String questionText, String[] options, String correctAnswer) {
         this.questionText = questionText;
         this.options = options;
         this.correctAnswer = correctAnswer;
-        // this.difficulty = "Easy";
-        totalQuestions++;
     }
 
-    public Question(String questionText, String[] options, String correctAnswer, String difficulty) {
-        this.questionText = questionText;
-        this.options = options;
-        this.correctAnswer = correctAnswer;
-        // this.difficulty = difficulty;
-        totalQuestions++;
-    }
+    // public Question(String questionText, String[] options, String correctAnswer, String difficulty) {
+    //     this.questionText = questionText;
+    //     this.options = options;
+    //     this.correctAnswer = correctAnswer;
+    //     // this.difficulty = difficulty;
+    //     totalQuestions++;
+    // }
+
+    public abstract void displayFormat();
 
     public void displayQuestion() {
         System.out.println("Question: " + questionText); 
@@ -44,8 +42,4 @@ public class Question {
         return options;
     }
 
-    // Static method to access totalQuestions
-    public static int getTotalQuestions() {
-        return totalQuestions;
-    }
 }
