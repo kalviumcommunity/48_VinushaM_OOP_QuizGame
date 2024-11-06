@@ -25,6 +25,14 @@ public class Player extends Person{
         totalPlayers++;
     }
 
+    // Constructor with name, score, and level (Overloaded Constructor)
+    public Player(String name, int score, String level) {
+        super(name);
+        this.score = score;
+        this.level = level;
+        totalPlayers++;
+    }
+
     private String determineLevel(int score) {
         if (score >= 50) return "Advanced";
         else if (score >= 20) return "Intermediate";
