@@ -16,6 +16,9 @@ public class Main {
             new TrueFalseQuestion("Water boils at 100 degrees Celsius.", "True"),
             new MultipleChoiceQuestion("Which city in India is often referred to as the 'Silicon Valley of India' due to its thriving technology and startup ecosystem?", new String[]{"Mumbai", "Hyderabad", "Chennai", "Bengaluru"}, "Bengaluru")
         };
+
+        // Use the StatisticsHandler interface
+        StatisticsHandler stats = new GameStatistics();
         
         System.out.println("Welcome to the Quiz Game!");
         System.out.println("-------------------------");
@@ -40,9 +43,9 @@ public class Main {
             System.out.println();
         }
 
-        System.out.println("Total players: " + GameStatistics.getTotalPlayers());
+        System.out.println("Total players: " + stats.getTotalPlayers()); 
 
-        GameStatistics.displayStatistics();
+        stats.displayStatistics();
 
         System.out.println("Resetting the score...");
         player1.resetScore();
