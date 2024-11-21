@@ -9,11 +9,14 @@ public class Main {
             new MultipleChoiceQuestion("What is the capital of India?", new String[]{"Mumbai", "Delhi", "Kolkata", "Chennai"}, "Delhi"),
             new MultipleChoiceQuestion("Which Indian festival is known as the Festival of Lights?", new String[]{"Holi", "Diwali", "Eid", "Navratri"}, "Diwali"),
             new MultipleChoiceQuestion("Who is known as the Father of the Nation in India?", new String[]{"Jawaharlal Nehru", "Sardar Patel", "Mahatma Gandhi", "Subhas Chandra Bose"}, "Mahatma Gandhi"),
+            new TrueFalseQuestion("The Earth is flat.", "False"),
             new MultipleChoiceQuestion("What is the national currency of India?", new String[]{"Dollar", "Euro", "Rupee", "Yen"}, "Rupee"),
             new MultipleChoiceQuestion("Which river is considered the holiest in India?", new String[]{"Yamuna", "Ganges", "Indus", "Godavari"}, "Ganges"),
             new MultipleChoiceQuestion("Who was the first President of India?", new String[]{"Dr. Rajendra Prasad", "Dr. Sarvepalli Radhakrishnan", "Jawaharlal Nehru", "Lal Bahadur Shastri"}, "Dr. Rajendra Prasad"),
+            new TrueFalseQuestion("Water boils at 100 degrees Celsius.", "True"),
             new MultipleChoiceQuestion("Which city in India is often referred to as the 'Silicon Valley of India' due to its thriving technology and startup ecosystem?", new String[]{"Mumbai", "Hyderabad", "Chennai", "Bengaluru"}, "Bengaluru")
         };
+        
         System.out.println("Welcome to the Quiz Game!");
         System.out.println("-------------------------");
 
